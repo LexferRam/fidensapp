@@ -20,7 +20,7 @@ const useRowStyles = makeStyles({
 export const RowTblMaster = (props) => {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
-  const { openDialog, setOpenDialog, rows } = useContext(DataContext);
+  const { rows } = useContext(DataContext);
   const classes = useRowStyles();
 
   useEffect(() => {

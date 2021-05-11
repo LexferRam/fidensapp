@@ -52,7 +52,7 @@ export const DatosInputs = () => {
           <TextField
             id="standard-number"
             helperText="Número de identificación"
-            type="text"
+            type="number"
             value={cedula}
             onChange={(e) => setCedula(e.target.value)}
           />

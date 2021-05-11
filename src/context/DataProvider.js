@@ -15,7 +15,6 @@ export const DataProvider = ({ children }) => {
     const codProveedor = await fetchData("/ObtieneCodProv", {
       cProveedor: proveedor,
     });
-
     const respAsegurabilidad = await fetchData("/ConsultaAsegurabilidad", {
       cCodProv: codProveedor.data[0].CODPROV,
       cTipoId: tipoDocu,
