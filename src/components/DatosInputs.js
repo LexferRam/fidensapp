@@ -3,6 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import { Button, Grid, Paper } from "@material-ui/core";
 import { DataContext } from "../context/DataProvider";
 import MenuItem from "@material-ui/core/MenuItem";
+import SearchIcon from '@material-ui/icons/Search';
 
 const currencies = [
   {
@@ -66,6 +67,15 @@ export const DatosInputs = () => {
             onClick={() => {
               fetchInfo(tipoID, "FIDENS", cedula);
             }} //10495356
+
+            style={{
+              height: "30px !important",
+              borderRadius: 50,
+              margin: "18px 0px 0px 20px",
+              fontSize: 8
+            }}
+            startIcon={<SearchIcon />}
+
           >
             Buscar
           </Button>

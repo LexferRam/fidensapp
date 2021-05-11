@@ -4,7 +4,7 @@ import axios from "axios";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = React.useState({ p_portal_username: "", p_pwd: "" });
+  const [user, setUser] = React.useState({ Cod_User: "", Contrasena: "" });
   const [open, setOpen] = React.useState(false);
   const [auth, setAuth] = React.useState(false);
   const [msn, setMsn] = React.useState("");
@@ -13,7 +13,8 @@ export const AuthProvider = ({ children }) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://segurospiramide.com/asg-api/login",
+      //  "https://segurospiramide.com/asg-api/login",
+      "http://localhost:5000/api/autenticarUser",
         user
       );
       await sessionStorage.setItem("DATA_FIDENS", JSON.stringify(res.data));

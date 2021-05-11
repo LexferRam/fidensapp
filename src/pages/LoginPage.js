@@ -2,8 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 // import AuthContext from "../Context/AuthContext/AuthContext";
 import Paper from "@material-ui/core/Paper";
 import Logo from "../logo-fidens.png";
-import HttpsIcon from "@material-ui/icons/Https";
-import { Button, TextField } from "@material-ui/core";
+import { HttpsIcon, Visibility, VisibilityOff } from "@material-ui/icons";
+import { Button, TextField,InputAdornment,IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 // import Alert from "./Alerta";
@@ -30,6 +30,12 @@ const LoginPage = (props) => {
   const { user, setUser, onSubmit, auth, open, setOpen, msn } = useContext(
     AuthContext
   );
+  const [shown, setShown] = React.useState(false);
+
+  const handleClickShowPassword = () => setShown(!shown);
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -88,7 +94,7 @@ const LoginPage = (props) => {
                   label="Nombre de Usuario"
                   type="text"
                   variant="outlined"
-                  name="p_portal_username"
+                  name="Cod_User"
                   onChange={onChange}
                   style={{ width: "100%" }}
                 />
@@ -98,11 +104,23 @@ const LoginPage = (props) => {
               >
                 <TextField
                   label="Contraseña"
-                  type="password"
+                  type={shown ? 'text' : 'password'}
                   variant="outlined"
-                  name="p_pwd"
+                  name="Contrasena"
                   onChange={onChange}
                   style={{ width: "100%" }}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                        >
+                          {shown ? <Visibility fontSize="small" /> : <VisibilityOff fontSize="small" />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               </div>
               <div>
