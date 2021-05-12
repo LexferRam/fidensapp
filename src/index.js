@@ -1,20 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-<<<<<<< HEAD
-import { App } from "./App";
-import "./index.css";
-
-ReactDOM.render(
-      <App />,
-=======
 import App from "./App";
 import { DataProvider } from "./context/DataProvider";
+import { AuthContext } from "./context/AuthContext";
 import "./index.css";
 
 ReactDOM.render(
+<AuthContext>
   <DataProvider>
     <App />
-  </DataProvider>,
->>>>>>> main
+  </DataProvider>
+  </AuthContext>,
   document.getElementById("root")
 );
