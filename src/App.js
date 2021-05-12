@@ -1,6 +1,12 @@
 import React from "react";
+<<<<<<< HEAD
+import { AppRouter } from "./router/AppRouter";
+import { AuthProvider } from "./auth/AuthContext";
+import { DataProvider } from "./context/DataProvider";
+=======
 import { Grid, Paper } from "@material-ui/core";
 import { TableMaster } from "./components/TableMaster";
+>>>>>>> main
 
 import { DatosInputs } from "./components/DatosInputs";
 import SimpleBackdrop from "./components/Backdrop";
@@ -9,6 +15,13 @@ import Dialog from "./components/Dialog";
 export default function CollapsibleTable() {
   return (
     <>
+<<<<<<< HEAD
+      <AuthProvider>
+        <DataProvider>
+          <AppRouter />
+        </DataProvider>
+      </AuthProvider>,
+=======
       <Dialog />
       <SimpleBackdrop />
       <Paper elevation={5} style={{ margin: 20, padding: 30 }}>
@@ -22,6 +35,7 @@ export default function CollapsibleTable() {
           </Grid>
         </Grid>
       </Paper>
+>>>>>>> main
     </>
   );
 }
